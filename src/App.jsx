@@ -1,7 +1,10 @@
+import Frutas from "./components/Frutas";
+import Contador from "./components/Contador";
+
 const App = () => {
   const persona = 'Carlos'
   const saludo = 'Hola mundo';
-  const user = false;
+  const user = true;
 
   const clasesObjeto = {
     primary: "text-primary",
@@ -23,17 +26,16 @@ const App = () => {
   }
   return (
     <div className="container py-3">
+
+      <Contador />
+
       <p className={clasesObjeto.primary}>{saludo}</p>
 
       {
         user ? <SaludoBienvenida /> : <SaludoDespedida />
       }
 
-      <ul>
-        {
-          frutas.map((fruta) => <li key={`${fruta}-item`}>{fruta}</li>)
-        }
-      </ul>
+      <Frutas frutasApp={frutas}/>
 
       <button
         className="btn btn-primary"
