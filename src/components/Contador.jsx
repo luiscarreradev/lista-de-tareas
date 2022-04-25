@@ -8,6 +8,10 @@ const Contador = () => {
     setContador(contador + 1);
   }
 
+  const decrementar = () => {
+    setContador(contador - 1);
+  }
+
   return (
     <>
       <h2>Contador</h2>
@@ -16,6 +20,10 @@ const Contador = () => {
         className='btn btn-dark'
         onClick={aumentar}
       >Aumentar</button>
+      <button 
+        className='btn mx-2 btn-warning'
+        onClick={decrementar}
+      >Decrementar</button>
     </>
   )
 }
