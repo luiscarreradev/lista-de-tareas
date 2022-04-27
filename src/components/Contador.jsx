@@ -28,4 +28,4 @@ const Contador = () => {
   )
 }
 
-export default Contador
+export default Contador 
