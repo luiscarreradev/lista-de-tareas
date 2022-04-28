@@ -1,7 +1,8 @@
 import { useState } from "react";
 import Swal from 'sweetalert2';
+import { v4 as uuidv4 } from 'uuid';
 
-const Formulario = () => {
+const Formulario = ({ manejarTareas }) => {
 
   //Estado inicial del formulario ----------------------------------------
   const initialState = {
@@ -56,6 +57,13 @@ const Formulario = () => {
       confirmButtonText: 'OK'
     })
     setTarea(initialState);
+    manejarTareas({
+      nombre: nombre,
+      descripcion: descripcion,
+      estado: estado === 'pendiente' ? false : true, 
+      prioridad: prioridad,
+      id: uuidv4()
+    });
   }
   
   
