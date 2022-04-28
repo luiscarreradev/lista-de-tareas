@@ -1,6 +1,10 @@
+import Formulario from "./Formulario"
+
 const TodoList = () => {
   return (
-    <div>TodoList</div>
+    <>
+      <Formulario />
+    </>
   )
 }
 

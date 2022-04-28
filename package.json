@@ -9,6 +9,7 @@
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-scripts": "5.0.1",
+    "sweetalert2": "^11.4.9",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -37,7 +38,6 @@
   },
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "index.js",
-  "devDependencies": {},
   "keywords": [],
   "author": "Luis Carrera <luiscarreramv@gmail.com>",
   "license": "MIT"
