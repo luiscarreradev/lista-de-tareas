@@ -1,13 +1,13 @@
-import Formulario from "./components/Formulario"
+import TodoList from "./components/TodoList";
 
 const App = () => {
 
   return (
-    <div className='container pt-4'>
-      <h1>Formulario</h1>
-      <Formulario />
+    <div className="container">
+      <h1>ToDo</h1>
+      <TodoList />
     </div>
-  )
+  );
 }
 
 export default App
