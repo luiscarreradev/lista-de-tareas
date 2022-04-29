@@ -69,7 +69,7 @@ const Formulario = ({ manejarTareas }) => {
   
   return (
     <>
-      <h3>Agreagar Tarea</h3>
+      <h3 className="text-center">Agreagar Tarea</h3>
       <form onSubmit={handleSubmit}>
         <input
           className="form-control mb-2"
@@ -107,7 +107,7 @@ const Formulario = ({ manejarTareas }) => {
           <label
             className="form-check-label"
             htmlFor="flexCheckDefault">
-            Default checkbox
+            Prioritario
           </label>
         </div>
         <button className="btn btn-primary" type="submit">
