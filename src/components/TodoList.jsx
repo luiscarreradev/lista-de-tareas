@@ -1,10 +1,19 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Formulario from "./Formulario"
 import Todo from "./Todo"
 
 const TodoList = () => {
+  const [tareas, setTareas] = useState([]);
 
-  const [tareas, setTareas] = useState([])
+  useEffect(() => {
+    if (localStorage.getItem("tareas")){
+      setTareas(JSON.parse(localStorage.getItem("tareas")));
+    }
+  },[])
+
+  useEffect(() => {
+    localStorage.setItem("tareas", JSON.stringify(tareas));
+  },[tareas])
   
   const agregarTareas = tarea => {
     console.log(tarea);

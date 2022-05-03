@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Swal from 'sweetalert2';
 import { v4 as uuidv4 } from 'uuid';
+import { useFormulario } from "../hooks/useFormulario";
 
 const Formulario = ({ manejarTareas }) => {
 
@@ -10,21 +11,13 @@ const Formulario = ({ manejarTareas }) => {
     descripcion: "",
     estado: 'pendiente',
     prioridad: false,
-
   }
 
-  const [tarea, setTarea] = useState(initialState);
+  const [ inputs, handleChange, reset ] = useFormulario(initialState);
 
-  const { nombre, descripcion, estado, prioridad } = tarea;
+  const { nombre, descripcion, estado, prioridad } = inputs;
 
  //Funciones ------------------------------------------------------------ 
-  const handleChange = e => {
-    const {name, value, type, checked} = e.target;
-    setTarea((prevState) => ({
-      ...prevState,
-      [name]: type === 'checkbox' ? checked : value
-    }))
-  };
   
   const handleSubmit = e => {
     e.preventDefault();
@@ -56,7 +49,9 @@ const Formulario = ({ manejarTareas }) => {
       icon: 'success',
       confirmButtonText: 'OK'
     })
-    setTarea(initialState);
+
+    reset();
+
     manejarTareas({
       nombre: nombre,
       descripcion: descripcion,
