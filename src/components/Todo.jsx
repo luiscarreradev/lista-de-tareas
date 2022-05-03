@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Todo = ({ todo,eliminarTarea }) => {
+const Todo = ({ todo,eliminarTarea, editarTarea }) => {
 
   const { nombre, descripcion, estado, prioridad, id } = todo;
 
@@ -11,7 +11,7 @@ const Todo = ({ todo,eliminarTarea }) => {
         <p>{descripcion}</p>
         <div>
           <button className="btn btn-danger me-2" onClick={() => eliminarTarea(id)}>Eliminar</button>
-          <button className="btn btn-warning">Editar</button>
+          <button className="btn btn-warning" onClick={() => editarTarea(id)}>Editar</button>
         </div>
       </div>
       <span className="badge bg-primary rounded-pill">

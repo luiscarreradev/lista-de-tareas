@@ -15,6 +15,15 @@ const TodoList = () => {
     setTareas((old) => old.filter(item => item.id !== id))
   }
 
+  const editarTarea = id => {
+    const editarTareas = tareas.map(item => (
+      item.id === id ? { ...item, estado: !item.estado } : item
+    ))
+
+    setTareas(editarTareas)
+    
+  }
+
   return (
     <>
       <Formulario manejarTareas={agregarTareas}/>
@@ -22,7 +31,11 @@ const TodoList = () => {
       <ol className="list-group list-group-numbered mt-2">
       {
         tareas.map(item => (
-          <Todo key={item.id} todo={item} eliminarTarea={eliminarTarea}/>
+          <Todo
+            key={item.id}
+            todo={item}
+            eliminarTarea={eliminarTarea}
+            editarTarea={editarTarea} />
         ))
       }
       </ol>
